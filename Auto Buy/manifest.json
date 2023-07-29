@@ -1,0 +1,27 @@
+{
+    "name": "Auto Buy",
+    "version": "1.0",
+    "manifest_version": 3,
+    "description": "Reads the content of a page.",
+    "action": {
+      "default_popup": "index.html"
+    },
+    "permissions": [
+      "activeTab",
+      "webRequest",
+      "storage",
+      "tabs"
+    ],
+    "content_scripts": [
+      {
+          "matches": [
+            "http://*/*",
+            "https://*/*"
+          ],
+          "js": ["contentScript.min.js"],
+          "all_frames": true,
+          "run_at": "document_start"
+      }
+    ],
+    "host_permissions": ["<all_urls>"]
+  }
